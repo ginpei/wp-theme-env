@@ -1,4 +1,9 @@
 <?php
-exec('echo "* One\n* Two" | ruby md.rb', $lines);
-$result = join("\n", $lines);
-echo $result;
+function md($source) {
+	exec('echo "' . $source . '" | ruby md.rb', $lines);  // TODO make it secure
+	$result = join("\n", $lines);
+	return $result;
+}
+
+echo md("* One\n* Two");
+echo md('"');
