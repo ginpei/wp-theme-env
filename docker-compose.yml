@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+
+  php_ruby:
+    build: .
+    command: "ruby md.rb"
+    volumes:
+      - .:/app
