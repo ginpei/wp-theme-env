@@ -4,6 +4,6 @@ services:
 
   php_ruby:
     build: .
-    command: "bash -c \"echo '* One\n* Two' | ruby md.rb\""
+    command: "php md.php"
     volumes:
       - .:/app
