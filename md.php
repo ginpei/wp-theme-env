@@ -1,13 +1,23 @@
 <?php
-function md($source) {
+
+function md($markdown) {
+	$html = work_on_tmpfile($markdown, function($tmpfname) {
+		exec("cat $tmpfname | ruby md.rb", $lines);
+		$result = join("\n", $lines);
+		return $result;
+	});
+
+	return $html;
+}
+
+function work_on_tmpfile($text, $callback) {
 	$tmpfname = tempnam("/tmp", "md");
 
 	$handle = fopen($tmpfname, "w");
-	fwrite($handle, $source);
+	fwrite($handle, $text);
 	fclose($handle);
 
-	exec("cat $tmpfname | ruby md.rb", $lines);  // TODO make it secure
-	$result = join("\n", $lines);
+	$result = $callback($tmpfname);
 
 	unlink($tmpfname);
 
