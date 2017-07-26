@@ -1,8 +1,8 @@
-/node_modules/
-npm-debug.log
 .DS_Store
 thumbs.db
-.env
+/node_modules/
+/npm-debug.log
 /.volumes/
-/wordpress/
 /mytheme/
+/wordpress/
+/.env
