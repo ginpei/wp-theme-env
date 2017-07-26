@@ -7,7 +7,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./app:/var/www/html
+      - ./wordpress:/var/www/html
+      - ./mytheme:/var/www/html/wp-content/themes/mytheme
     depends_on:
       - php_ruby
 
@@ -18,7 +19,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./app:/var/www/html
+      - ./wordpress:/var/www/html
+      - ./mytheme:/var/www/html/wp-content/themes/mytheme
     depends_on:
       - db
 
