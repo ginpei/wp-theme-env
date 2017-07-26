@@ -52,3 +52,9 @@ If your WordPress fails to connect database, please wait a minute and try again.
 Did you also set up something like "Site Title"? Are you seeing your WordPress working? OK let's roll!
 
 Now create your own theme under the directory `mytheme`. When you create files `index.php` and `style.css` there, you will see your theme at "Appearance &gt; Themes". Yay!
+
+## From Next Time
+
+You can start servers by hitting `docker-compose up`, stop them by holding `Control+C`, updating your theme by editing files under `mytheme`.
+
+You may want to learn about Docker and the way to create WordPress' theme.
